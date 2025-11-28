@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="WinApp.Views.Auto.RunView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vst="clr-namespace:Vst.Controls"
+             Background="White">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <vst:HeaderText Text="OCR AUTO CLICKER" HeaderSize="3" HorizontalAlignment="Center"/>
+
+        <!-- Cấu hình vùng quét -->
+        <GroupBox Header="1. Vùng quét màn hình (A -> B)" Grid.Row="1" Margin="0,10">
+            <StackPanel>
+                <TextBlock Name="lblMouse" Text="Di chuột để xem tọa độ..." Foreground="Red" HorizontalAlignment="Center" Margin="5"/>
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="X1:"/>
+                        <TextBox Name="txtX1"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="5">
+                        <TextBlock Text="Y1:"/>
+                        <TextBox Name="txtY1"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Margin="5">
+                        <TextBlock Text="X2:"/>
+                        <TextBox Name="txtX2"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="3" Margin="5">
+                        <TextBlock Text="Y2:"/>
+                        <TextBox Name="txtY2"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Từ khóa & Nút chạy -->
+        <Grid Grid.Row="2" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Từ khóa:" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Name="txtKeyword" Margin="10,0" FontWeight="Bold"/>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <CheckBox Name="chkExact" Content="Đúng 100%" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <!-- NÚT MÀU XANH LÁ CÂY ĐỂ CHẠY -->
+                <Button Name="btnStart" Content="BẮT ĐẦU CHẠY" 
+                        Background="Green" Foreground="White" FontWeight="Bold"
+                        Padding="15,5" Cursor="Hand" Click="btnStart_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Log -->
+        <TextBox Grid.Row="3" Name="txtLog" IsReadOnly="True" VerticalScrollBarVisibility="Auto" 
+                 Background="#F5F5F5" FontFamily="Consolas" TextWrapping="Wrap"/>
+    </Grid>
+</UserControl>

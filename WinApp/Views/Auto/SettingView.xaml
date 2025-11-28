@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="WinApp.Views.Auto.SettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vst="clr-namespace:Vst.Controls"
+             Background="White">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <vst:HeaderText Text="CẤU HÌNH KỊCH BẢN CHẠY KÈM" HeaderSize="3" />
+
+        <GroupBox Header="Thêm bước Click thủ công" Grid.Row="1" Margin="0,10,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Form nhập -->
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Tọa độ X:"/>
+                        <TextBox Name="txtX" Width="60" Text="0"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Tọa độ Y:"/>
+                        <TextBox Name="txtY" Width="60" Text="0"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Chờ (ms):"/>
+                        <TextBox Name="txtDelay" Width="60" Text="1000"/>
+                    </StackPanel>
+                    <vst:Button x:Name="btnAdd" Text="Thêm" Background="#624cfd" Height="30" VerticalAlignment="Bottom" Margin="10,0,0,2"/>
+                    <vst:Button x:Name="btnClear" Text="Xóa hết" Background="Red" Height="30" VerticalAlignment="Bottom" Margin="5,0,0,2"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="1" Text="Danh sách các thao tác sẽ chạy sau khi OCR tìm thấy chữ:" Margin="5,10,0,5" FontStyle="Italic" Foreground="Gray"/>
+
+                <!-- Danh sách -->
+                <ListBox Grid.Row="2" Name="lstSteps" Margin="5" BorderThickness="1" BorderBrush="#DDD" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

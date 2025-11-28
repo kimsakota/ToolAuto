@@ -166,7 +166,8 @@ namespace Vst.Controls.SVG
 namespace Vst.Controls.SVG
 {
     public class ColorAttribute : Attribute { }
-    public class NumberListAttribute : Attribute {
+    public class NumberListAttribute : Attribute
+    {
         public override object GetShapeAttributeValue() => Numbers;
         public override void ScaleTransform(double scale)
         {
@@ -176,16 +177,21 @@ namespace Vst.Controls.SVG
             }
         }
     }
-    public class NumberAttribute : NumberListAttribute {
-        public override object GetShapeAttributeValue() => Numbers[0];
+    public class NumberAttribute : NumberListAttribute
+    {
+        // SỬA LỖI: Kiểm tra độ dài mảng trước khi truy cập
+        public override object GetShapeAttributeValue()
+        {
+            return (Numbers != null && Numbers.Length > 0) ? Numbers[0] : 0.0;
+        }
     }
     public class PointsAttribute : NumberListAttribute { }
-    public class ViewBoxAttribute : NumberListAttribute 
+    public class ViewBoxAttribute : NumberListAttribute
     {
-        public double Width => Numbers[2];
-        public double Height => Numbers[3];
+        public double Width => Numbers.Length > 2 ? Numbers[2] : 0;
+        public double Height => Numbers.Length > 3 ? Numbers[3] : 0;
     }
-    public class DataPathAttribute : Attribute 
+    public class DataPathAttribute : Attribute
     {
         public class Command
         {
@@ -251,7 +257,8 @@ namespace Vst.Controls.SVG
                     while (pos.Count > 0)
                     {
                         int end = pos.Dequeue();
-                        _commands.Add(new Command {
+                        _commands.Add(new Command
+                        {
                             Name = Value[start],
                             Arguments = Parse(Value, start + 1, end)
                         });

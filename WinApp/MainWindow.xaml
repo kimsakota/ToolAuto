@@ -6,92 +6,67 @@
         xmlns:local="clr-namespace:WinApp.Views"
         xmlns:vst="clr-namespace:Vst.Controls"
         mc:Ignorable="d"
-        Title="Nhập giấy phép lái xe" Height="600" Width="400">
+        Title="Nhập giấy phép lái xe" Height="600" Width="500">
+    <!-- Tăng Width lên chút -->
     <Grid>
-        <vst:MyTemplateForm x:Name="loginForm"
-                    Visibility="Collapsed"
-                Width="350">
+        <vst:MyTemplateForm x:Name="loginForm" Visibility="Collapsed" Width="350">
         </vst:MyTemplateForm>
-        <Grid x:Name="userForm" 
-              Visibility="Visible">
+        <Grid x:Name="userForm" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Border Background="{StaticResource BannerBrush}" 
-                    BorderThickness="0 1 0 1" 
-                    BorderBrush="LightGray">
+            <!-- (Giữ nguyên phần Header cũ) -->
+            <Border Background="{StaticResource BannerBrush}" BorderThickness="0 1 0 1" BorderBrush="LightGray">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-
-                    <local:ScriptToolbar x:Name="ScriptTools" 
-                                         Margin="10 0 0 0"
-                                         Grid.ColumnSpan="2" />
-                    
-                    <Border Visibility="Collapsed" 
-                            CornerRadius="6" Background="White" Grid.Column="1">
-                        <vst:SearchBox x:Name="searchBox" />
-                    </Border>
+                    <local:ScriptToolbar x:Name="ScriptTools" Margin="10 0 0 0" Grid.ColumnSpan="2" />
                     <Border Grid.Column="2">
-                        <StackPanel x:Name="ActionPanel" 
-                                    Orientation="Horizontal" 
-                                    VerticalAlignment="Center"
-                                    HorizontalAlignment="Right">
-                        </StackPanel>
+                        <StackPanel x:Name="ActionPanel" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right"></StackPanel>
                     </Border>
                 </Grid>
             </Border>
 
             <Grid Grid.Row="1">
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="80" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition Height="40" />
-                        </Grid.RowDefinitions>
-                        <ScrollViewer 
-                                  x:Name="mainContent" 
-                                  VerticalScrollBarVisibility="Auto"
-                                  Background="WhiteSmoke">
-
-                        </ScrollViewer>
-                        <Border Background="WhiteSmoke" 
-                                BorderBrush="LightGray"
-                                Padding="5"
-                                BorderThickness="0 1 0 0"
-                                Grid.Row="1">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock x:Name="Summary" VerticalAlignment="Center">
-                                </TextBlock>
-                            </Grid>
-                        </Border>
-                    </Grid>
-                    
-                    <Border Grid.Column="0" Background="{StaticResource BannerBrush}">
-
-                        <StackPanel>
-                            <vst:TabbarItem Source="user" Url="GPLX" Text="danh sách" IsActivated="True" />
-                            <vst:TabbarItem Source="tick" Url="GPLX/saved" Text="đã lưu" />
-                            <vst:TabbarItem Source="plus" Url="GPLX/add" Text="nhập liệu" />
-                        </StackPanel>
-
+                <!-- CỘT 1: NỘI DUNG CHÍNH (Đã sửa Grid.Column="1") -->
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer x:Name="mainContent" VerticalScrollBarVisibility="Auto" Background="WhiteSmoke">
+                        <!-- Nội dung RunView hoặc SettingView sẽ hiện ở đây -->
+                    </ScrollViewer>
+                    <Border Background="WhiteSmoke" BorderBrush="LightGray" Padding="5" BorderThickness="0 1 0 0" Grid.Row="1">
+                        <TextBlock x:Name="Summary" VerticalAlignment="Center"></TextBlock>
                     </Border>
                 </Grid>
 
+                <!-- CỘT 0: MENU BÊN TRÁI -->
+                <Border Grid.Column="0" Background="{StaticResource BannerBrush}">
+                    <StackPanel>
+                        <!-- Menu cũ -->
+                        <vst:TabbarItem Source="user" Url="GPLX" Text="danh sách" />
+                        <vst:TabbarItem Source="tick" Url="GPLX/saved" Text="đã lưu" />
+                        <vst:TabbarItem Source="plus" Url="GPLX/add" Text="nhập liệu" />
+
+                        <!-- MENU MỚI -->
+                        <Rectangle Height="1" Fill="#CCC" Margin="10,5"/>
+                        <!-- Dòng kẻ phân cách -->
+                        <vst:TabbarItem Source="play" Url="auto/index" Text="Chạy Auto" IsActivated="True" />
+                        <vst:TabbarItem Source="settings" Url="auto/setting" Text="Cấu hình" />
+
+                    </StackPanel>
+                </Border>
             </Grid>
         </Grid>
     </Grid>
