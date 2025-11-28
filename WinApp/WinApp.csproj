@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E202967-B7B6-4948-BD36-A8A44F27F00C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WinApp</RootNamespace>
+    <AssemblyName>WinApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gma.System.MouseKeyHook, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MouseKeyHook.5.0.0\lib\net40\Gma.System.MouseKeyHook.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\GPLXController.cs" />
+    <Compile Include="Controllers\GuestController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\GPLX.cs" />
+    <Compile Include="Models\MouseScript.cs" />
+    <Compile Include="ViewModels\AccountContext.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="Models\DB.cs" />
+    <Compile Include="Models\Users.cs" />
+    <Compile Include="ViewModels\EditContext.cs" />
+    <Compile Include="ViewModels\GPLXContext.cs" />
+    <Compile Include="ViewModels\ListContext.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\SearchContext.cs" />
+    <Compile Include="Views\Account\Edit.cs" />
+    <Compile Include="Views\Account\Index.cs" />
+    <Compile Include="Views\Account\Open.cs" />
+    <Compile Include="Views\Admin\Index.cs" />
+    <Compile Include="Views\BaseView.cs" />
+    <Compile Include="Views\FlyoutPanel.xaml.cs">
+      <DependentUpon>FlyoutPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GPLX\GplxItemView.xaml.cs">
+      <DependentUpon>GplxItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GPLX\Index.cs" />
+    <Compile Include="Views\GPLX\OpenOneLayout.xaml.cs">
+      <DependentUpon>OpenOneLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GPLX\ScriptToolbar.xaml.cs">
+      <DependentUpon>ScriptToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GridView.cs" />
+    <Compile Include="Views\_controls\SearchBox.cs" />
+    <Compile Include="Views\_controls\TabbarItem.cs" />
+    <Compile Include="Views\_controls\MyForm.cs" />
+    <Compile Include="Views\_controls\Extentions.cs" />
+    <Compile Include="Views\_controls\MyEditors.cs" />
+    <Compile Include="Views\_controls\MyElements.cs" />
+    <Compile Include="Views\_controls\MyTableView.cs" />
+    <Compile Include="Views\_controls\SVG\Attribute.cs" />
+    <Compile Include="Views\_controls\SVG\Element.cs" />
+    <Compile Include="Views\_controls\SVG\ShapeExtension.cs" />
+    <Compile Include="Views\_controls\SVG\SvgIcon.cs" />
+    <Compile Include="Views\_windows\WindowExtensions.cs" />
+    <Compile Include="Views\_windows\WindowHook.cs" />
+    <Compile Include="VST\Data\BsonDataMap.cs" />
+    <Compile Include="VST\Data\Collection.cs" />
+    <Compile Include="VST\Data\Database.cs" />
+    <Compile Include="VST\Data\Document.cs" />
+    <Compile Include="VST\Data\ObjectId.cs" />
+    <Compile Include="VST\Document.cs" />
+    <Compile Include="VST\DocumentExt.cs" />
+    <Compile Include="VST\MqttClient\Client.cs" />
+    <Compile Include="VST\MqttClient\Packet.cs" />
+    <Compile Include="VST\MVC\ActionResult.cs" />
+    <Compile Include="VST\MVC\Controller.cs" />
+    <Compile Include="VST\MVC\Engine.cs" />
+    <Compile Include="VST\MVC\RequestContext.cs" />
+    <Compile Include="VST\MVC\Session.cs" />
+    <Compile Include="VST\MVC\View.cs" />
+    <Compile Include="VST\MVC\ViewDataDictionary.cs" />
+    <Compile Include="VST\Screen.cs" />
+    <Compile Include="VST\Services\ApiRestfull.cs" />
+    <Compile Include="VST\StringExtension.cs" />
+    <Compile Include="VST\Timer\Timer.cs" />
+    <Compile Include="VST\VietUnicode.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\FlyoutPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GPLX\GplxItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GPLX\OpenOneLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GPLX\ScriptToolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App_Data\forms.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App_Data\list.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App_Data\Images\bolt.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App_Data\Images\device.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App_Data\Images\history.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App_Data\Images\home.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App_Data\Images\setting.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App_Data\Images\user.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Svg\bar-chart.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\stop.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\play.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\end-record.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\record.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\bolt.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\clipboard.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\device.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\history.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\home.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\open.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\plus.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\refresh.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\save.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\search.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\settings.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\tick.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\user.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\zoom-in.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Svg\zoom-out.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

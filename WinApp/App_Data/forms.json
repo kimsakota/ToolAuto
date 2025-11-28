@@ -1,0 +1,49 @@
+﻿{
+  "login": {
+    "caption": "LOGIN",
+    "url": "guest/login",
+    "editors": [
+      {
+        "name": "userName",
+        "caption": "Tên đăng nhập"
+      },
+      {
+        "name": "password",
+        "caption": "Mật khẩu",
+        "type": "password"
+      }
+    ]
+  },
+  "account": {
+    "caption": "người dùng",
+    "editors": [
+      {
+        "name": "role",
+        "caption": "Quyền truy cập",
+        "type": "select",
+        "options": "Customer;Technical"
+      },
+      {
+        "name": "phone",
+        "caption": "Điện thoại"
+      },
+      {
+        "name": "email",
+        "caption": "Email",
+        "required": false
+      },
+      {
+        "name": "_id",
+        "caption": "Tên đăng nhập",
+        "layout": 6
+      },
+      {
+        "name": "password",
+        "caption": "Mật khẩu",
+        "Type": "password",
+        "required": false,
+        "layout": 6
+      }
+    ]
+  }
+}

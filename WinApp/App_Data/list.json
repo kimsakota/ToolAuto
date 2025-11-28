@@ -1,0 +1,77 @@
+﻿{
+  "account": {
+    "caption": "Danh sách người dùng",
+    "columns": [
+      {
+        "name": "_id",
+        "caption": "Tên người dùng"
+      },
+      {
+        "name": "role",
+        "caption": "Quyền"
+      },
+      {
+        "name": "phone",
+        "caption": "Điện thoại"
+      },
+      {
+        "name": "email",
+        "caption": "Email"
+      }
+    ]
+  },
+  "gplx": {
+    "caption": "Giấy đăng ký xe",
+    "columns": [
+      {
+        "name": "name",
+        "caption": "Họ tên",
+        "import": "ho ten"
+      },
+      {
+        "name": "cccd",
+        "caption": "Số CCCD",
+        "import": "so cccd"
+      },
+      {
+        "name": "ngayCap",
+        "caption": "Ngày cấp",
+        "import": "ngay cap",
+        "default": "05/07/2021"
+      },
+      {
+        "name": "soDT",
+        "caption": "Điện thoại",
+        "import": "so dien thoai",
+        "default": "0342036732"
+      },
+      {
+        "name": "dctt",
+        "caption": "Xã/Phường thường trú",
+        "import": "dia chi thuong tru",
+        "default": "Thành phố Hà Nội - Xã Gia Lâm"
+      },
+      {
+        "name": "soNha",
+        "caption": "Địa chỉ (số nhà, đường, ...)",
+        "import": "so nha",
+        "default": "Thôn Cam 2"
+      },
+      {
+        "name": "_id",
+        "caption": "Biển số",
+        "import": "bien so"
+      },
+      {
+        "name": "soMay",
+        "caption": "Số máy",
+        "import": "so may"
+      },
+      {
+        "name": "soKhung",
+        "caption": "Số khung",
+        "import": "so khung"
+      }
+    ]
+  }
+}
